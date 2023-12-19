@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/constants/images.dart';
 import 'package:machine_test/views/home_page/home_page.dart';
+import 'package:machine_test/views/home_page/nav_bar.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({
@@ -91,7 +92,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomePage()));
+                          builder: (context) => const HomePageNavBar()));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.blue1,
@@ -155,7 +156,7 @@ class LoginPage extends StatelessWidget {
                   text: "Don't have an account yet?",
                   style: TextStyle(color: Colors.black)),
               TextSpan(
-                  text: "Sign up",
+                  text: " Sign up",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,

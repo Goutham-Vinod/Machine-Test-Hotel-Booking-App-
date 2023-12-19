@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
+import 'package:machine_test/constants/global_variables.dart';
 import 'package:machine_test/views/home_page/home_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -67,44 +68,49 @@ class _HomePageNavBarState extends State<HomePageNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          PersistentTabView(
-            context,
-            screens: _buildScreens(),
-            controller: _controller,
-            items: _navBarsItems(),
-            padding: NavBarPadding.fromLTRB(10, 10, 20, 20),
-            margin: EdgeInsets.all(15),
-
-            resizeToAvoidBottomInset: true,
-            navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0
-                ? 0.0
-                : kBottomNavigationBarHeight,
-            bottomScreenMargin: 0,
-            backgroundColor: AppColors.blue1, // Colors.transparent,
-
-            decoration: const NavBarDecoration(
-                colorBehindNavBar: Colors.indigo,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                )),
-            itemAnimationProperties: const ItemAnimationProperties(
-              duration: Duration(milliseconds: 400),
-              curve: Curves.ease,
-            ),
-            screenTransitionAnimation: const ScreenTransitionAnimation(
-              animateTabTransition: true,
-            ),
-            navBarStyle: NavBarStyle
-                .style7, // Choose the nav bar style with this property
+    return ValueListenableBuilder(
+      valueListenable: AppGlobalVar.hideNavBarNotifier,
+      builder: (context, hideNavBar, child) {
+        return Scaffold(
+          body: Stack(
+            children: [
+              PersistentTabView(
+                context,
+                screens: _buildScreens(),
+                controller: _controller,
+                items: _navBarsItems(),
+                padding: NavBarPadding.fromLTRB(10, 10, 20, 20),
+                margin: EdgeInsets.all(15),
+                hideNavigationBar: hideNavBar,
+                resizeToAvoidBottomInset: true,
+                navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0
+                    ? 0.0
+                    : kBottomNavigationBarHeight,
+                bottomScreenMargin: 0,
+                backgroundColor: AppColors.blue1, // Colors.transparent,
+                onItemSelected: (value) {},
+                decoration: const NavBarDecoration(
+                    colorBehindNavBar: Colors.indigo,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30),
+                    )),
+                itemAnimationProperties: const ItemAnimationProperties(
+                  duration: Duration(milliseconds: 400),
+                  curve: Curves.ease,
+                ),
+                screenTransitionAnimation: const ScreenTransitionAnimation(
+                  animateTabTransition: true,
+                ),
+                navBarStyle: NavBarStyle
+                    .style7, // Choose the nav bar style with this property
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

@@ -1,6 +1,6 @@
 
 * Complete login page UI ✅
-* Complete Home page UI
+* Complete Home page UI ✅
 * Complete Properties page
 * Complete About this home page
 * Make it responsive (on all mobile devices)
