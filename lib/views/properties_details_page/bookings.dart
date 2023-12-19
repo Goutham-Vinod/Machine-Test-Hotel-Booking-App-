@@ -8,6 +8,7 @@ class Bookings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         ListView(
@@ -16,7 +17,7 @@ class Bookings extends StatelessWidget {
 // -------------------------  List tile 1 --------------------------------------
             Container(
               height: 50,
-              width: 100,
+
               // margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class Bookings extends StatelessWidget {
                   Spacer(),
                   Container(
                     height: 25,
-                    width: 80,
+                    width: width * 0.25,
                     decoration: BoxDecoration(
                         color: AppColors.green2,
                         borderRadius: BorderRadius.circular(20)),
@@ -61,7 +62,6 @@ class Bookings extends StatelessWidget {
             SizedBox(height: 20),
             Container(
               height: 110,
-              width: 100,
 
               // margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -126,7 +126,7 @@ class Bookings extends StatelessWidget {
             SizedBox(height: 10),
             Container(
               height: 110,
-              width: 100,
+
               // margin: EdgeInsets.symmetric(horizontal: 20),
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               decoration: BoxDecoration(
@@ -191,7 +191,7 @@ class Bookings extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 40,
-            width: 250,
+            width: width * 0.75,
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
