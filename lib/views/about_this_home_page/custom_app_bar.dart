@@ -8,11 +8,12 @@ class CustomAppBar3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         Row(
           children: [
-            SizedBox(width: 20),
+            SizedBox(width: width * 0.05),
             Container(
               decoration:
                   BoxDecoration(shape: BoxShape.circle, color: AppColors.blue4),
@@ -24,12 +25,12 @@ class CustomAppBar3 extends StatelessWidget {
                     Icons.arrow_back,
                   )),
             ),
-            SizedBox(width: 90),
+            SizedBox(width: width * 0.2),
             Text(
               'Dahlia Place',
               style: TextStyle(fontWeight: FontWeight.w600),
             ),
-            SizedBox(width: 50),
+            SizedBox(width: width * 0.11),
             IconButton(
                 onPressed: () {},
                 icon: Icon(
