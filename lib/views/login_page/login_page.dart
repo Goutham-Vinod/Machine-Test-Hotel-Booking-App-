@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/constants/images.dart';
-import 'package:machine_test/views/home_page/home_page.dart';
 import 'package:machine_test/views/home_page/nav_bar.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,7 +10,9 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -56,6 +57,7 @@ class LoginPage extends StatelessWidget {
           const SizedBox(height: 40),
 // ------------------------  Password  -----------------------------------------
           TextFormField(
+            obscureText: true,
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.vpn_key_outlined),
               // dev_note : want to use proper icon here
@@ -64,6 +66,7 @@ class LoginPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               labelText: 'Password',
+
               labelStyle: const TextStyle(color: Colors.black),
               floatingLabelBehavior: FloatingLabelBehavior.always,
             ),
@@ -76,7 +79,7 @@ class LoginPage extends StatelessWidget {
               Icons.check_circle,
               color: AppColors.blue1,
             ),
-            SizedBox(width: 5),
+            SizedBox(width: width * 0.02),
             Text('Remember me'),
             Spacer(),
             Text('Forgot password?')
@@ -85,7 +88,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 30),
 // ---------------------------  Login  -----------------------------------------
           SizedBox(
-            width: 350,
+            width: width * 0.9,
             height: 50,
             child: ElevatedButton(
                 onPressed: () {
@@ -112,14 +115,14 @@ class LoginPage extends StatelessWidget {
             children: [
               SizedBox(
                 child: Divider(thickness: 2),
-                width: 100,
+                width: width * 0.25,
               ),
-              SizedBox(width: 10),
+              SizedBox(width: width * 0.02),
               Text('Or sign up with'),
-              SizedBox(width: 10),
+              SizedBox(width: width * 0.02),
               SizedBox(
                 child: Divider(thickness: 2),
-                width: 100,
+                width: width * 0.25,
               ),
             ],
           ),
@@ -177,11 +180,12 @@ class SocialLoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Container(
         height: 50,
-        width: 100,
+        width: width * 0.25,
         decoration: BoxDecoration(
           color: AppColors.blue5,
           borderRadius: BorderRadius.circular(5),
