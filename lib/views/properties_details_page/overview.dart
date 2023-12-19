@@ -8,6 +8,7 @@ class Overview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
         ListView(
@@ -56,7 +57,7 @@ class Overview extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 40,
-            width: 250,
+            width: width * 0.75,
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -95,6 +96,7 @@ class CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       height: 45,
@@ -104,7 +106,7 @@ class CustomListTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(width: 10),
+          SizedBox(width: width * 0.05),
           Text(prefixText ?? ''),
           Spacer(),
           Text(
@@ -114,7 +116,7 @@ class CustomListTile extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 fontSize: size),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: width * 0.05),
         ],
       ),
     );
