@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
-import 'package:machine_test/constants/images.dart';
 import 'package:machine_test/views/about_this_home_page/custom_app_bar.dart';
 import 'package:machine_test/views/about_this_home_page/image_display_widget.dart';
-import 'package:machine_test/views/home_page/custom_app_bar.dart';
 
 class AboutThisHome extends StatelessWidget {
   const AboutThisHome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return DefaultTabController(
         length: 3,
         child: Stack(
@@ -20,7 +19,7 @@ class AboutThisHome extends StatelessWidget {
                   CustomAppBar3(),
                   Row(
                     children: [
-                      SizedBox(width: 100),
+                      SizedBox(width: width * 0.35),
                       RichText(
                           text: TextSpan(children: [
                         TextSpan(
@@ -90,21 +89,21 @@ class AboutThisHome extends StatelessWidget {
                               size: 18,
                               color: Colors.grey,
                             ),
-                            SizedBox(width: 20),
+                            SizedBox(width: width * 0.05),
                             Text(
                               '4 ',
                               style: TextStyle(
                                 color: Colors.black,
                               ),
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: width * 0.01),
                             Icon(
                               Icons.bathtub_outlined,
                               size: 14,
                               color: Colors.grey,
                             ),
                             Text('1200 sq ft'),
-                            SizedBox(width: 60),
+                            SizedBox(width: width * 0.2),
                             Text('Built in 1999'),
                           ],
                         ),
@@ -141,18 +140,23 @@ With3,130 square feet indoors and nearly.''',
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            SizedBox(width: 100),
+                            SizedBox(width: width * 0.22),
                             Text('View More'),
                           ],
                         ),
 // -----------------------------------------------------------------------------
 
 // ----------------------------- Last Section ----------------------------------
+
                         ListContent(
                             prefix: '360 degree view', suffix: 'Ocean views'),
-                        ListContent(prefix: 'Elevator', suffix: 'Deck'),
-                        ListContent(prefix: 'Patio', suffix: 'Fireplace'),
-                        ListContent(prefix: '2-car garage', suffix: 'New co'),
+                        ListContent(
+                            prefix: 'Elevator               ', suffix: 'Deck'),
+                        ListContent(
+                            prefix: 'Patio                   ',
+                            suffix: 'Fireplace'),
+                        ListContent(
+                            prefix: '2-car garage   ', suffix: 'New co'),
 // -----------------------------------------------------------------------------
                       ],
                     ),
@@ -168,7 +172,7 @@ With3,130 square feet indoors and nearly.''',
                 color: Color.fromARGB(180, 30, 41, 71),
                 child: Row(
                   children: [
-                    SizedBox(width: 30),
+                    SizedBox(width: width * 0.05),
                     Icon(
                       Icons.call_outlined,
                       color: Colors.white,
@@ -180,7 +184,7 @@ With3,130 square feet indoors and nearly.''',
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(width: 70),
+                    SizedBox(width: width * 0.15),
                     Icon(
                       Icons.mail_outline,
                       color: Colors.white,
@@ -192,10 +196,10 @@ With3,130 square feet indoors and nearly.''',
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(width: 50),
+                    SizedBox(width: width * 0.12),
                     Container(
                       height: 45,
-                      width: 100,
+                      width: width * 0.3,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: AppColors.blue1,
@@ -238,15 +242,19 @@ class ListContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Row(
       children: [
-        Text(
-          prefix,
-          style: TextStyle(
-            height: 3,
+        SizedBox(
+          width: width * 0.4,
+          child: Text(
+            prefix,
+            style: TextStyle(
+              height: 3,
+            ),
           ),
         ),
-        SizedBox(width: 90),
+        SizedBox(width: width * 0.15),
         Text(
           suffix,
           style: TextStyle(
