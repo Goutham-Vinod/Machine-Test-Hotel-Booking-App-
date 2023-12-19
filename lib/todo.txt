@@ -1,0 +1,21 @@
+
+* Complete login page UI ✅
+* Complete Home page UI
+* Complete Properties page
+* Complete About this home page
+* Make it responsive (on all mobile devices)
+* Give them proper font
+* Make app bar black font N transparent background
+* clear all the dev_note
+* Make background curve more perfect
+
+* Improve icon similarity to model image
+
+
+* Implement Animations
+* Implement some functionalities
+* Improve coding standard (proper use of const)
+
+* Screen record project
+* Setup apk (Rename app, App Icon, App splash screen)
+* Setup Git Repo with Screenshots and Gif
