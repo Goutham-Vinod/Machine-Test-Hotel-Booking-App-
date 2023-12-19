@@ -8,12 +8,14 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //to aasign 60% width of screen size
+    double width = MediaQuery.of(context).size.width;
     return Row(
       children: [
-        const SizedBox(width: 20),
+        SizedBox(width: width * 0.03),
         SizedBox(
           height: 50,
-          width: 250,
+          width: width * 0.65,
           child: TextField(
             decoration: InputDecoration(
                 prefixIcon: Icon(Icons.location_on_outlined),
